@@ -1,0 +1,21 @@
+.a{
+    border: 4 px solid;
+    width: 100% ;
+    background:#af1d20;
+    height:40 px;
+    color:white;
+    line-height: 40 px;
+    font-weight:bold;
+    margin-top:70 px;
+
+}
+.b{
+    height: 300 px;
+    width: 400 px;
+    padding-top: 50 px;
+    padding: 20px;
+}
+.mt-2{
+    font-size: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
