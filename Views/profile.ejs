@@ -1,10 +1,22 @@
 <%- include('./header.ejs') %>
+<br><br><br><br><br>
+
+<div class="bg">
+    <div class="d"><h1 class="p"><strong>PROFILE</strong></h1>
+    <br>
+    <br>
+
+    <h3>Want to change password?</h3>
+    <button class="btn cors mt-2" data-bs-toggle="modal" data-bs-target="#cpassword">Change password</button>
+    <br><br><br>
+    <h3>Want to update profile?</h3>
+<button class="btn cors mt-2" data-bs-toggle="modal" data-bs-target="#uprofile">Update profile</button>
+</div>
+</div>
+<!-- <br><br>
 <br><br>
-<br><br>
-<br><br>
-<style>
-    
-</style>
+<br><br> -->
+<link rel="stylesheet" href="css/profile.css">
 <% if(message.length>0){ %>
     <div class="alert alert-danger">
         <%= message %>
@@ -17,9 +29,9 @@
 
     </div>
  <% } %>
-<button class="btn cors mt-4" data-bs-toggle="modal" data-bs-target="#cpassword">Change password</button>
-<button class="btn cors mt-4" data-bs-toggle="modal" data-bs-target="#uprofile">Update profile</button>
-<br><br><br><br>
+<!-- <button class="btn cors mt-4" data-bs-toggle="modal" data-bs-target="#cpassword">Change password</button>
+<button class="btn cors mt-4" data-bs-toggle="modal" data-bs-target="#uprofile">Update profile</button> -->
+<!-- <br><br><br><br> -->
 
 <!-- change password--> 
 <div class="modal fade" id="cpassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
@@ -86,9 +98,5 @@
         </div>
     </div>
 </div>
-
-
-
-
 
 <%- include('./footer.ejs') %>
