@@ -1,8 +1,8 @@
 const express = require('express')
-// const route = express.Router()
+const route = express.Router()
 const FrontController=require('../Controllers/frontcontroller')
 const Coursecontroller = require('../Controllers/Coursecontroller')
-const route=express.Router()
+// const route=express.Router()
 const CheckUserAuth=require('../Middleware/auth')
 const AdminController = require('../Controllers/Admin/AdminController')
 

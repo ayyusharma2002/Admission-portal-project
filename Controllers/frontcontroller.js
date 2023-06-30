@@ -14,7 +14,7 @@ class FrontController {
     static login = async (req, res) => {
         // console.log(req.body)
         try {
-            res.render("login", { message: req.flash('error') })
+            res.render("registration", { message: req.flash('error') })
         } catch (error) {
             console.log(error)
         }
@@ -42,21 +42,21 @@ class FrontController {
 
     static about = async (req, res) => {
         try {
-            const {name,image,_id} = req.user
-            res.render("about",{n :name,i:image})
+            const { name, image, _id } = req.user
+            res.render("about", { n: name, i: image })
         } catch (error) {
             console.log(error)
         }
     }
     static contact = async (req, res) => {
         try {
-            const {name,image,_id} = req.user
-            res.render("contact",{n :name,i:image})
+            const { name, image, _id } = req.user
+            res.render("contact", { n: name, i: image })
         } catch (error) {
             console.log(error)
         }
     }
-    static home  = async (req, res) => {
+    static home = async (req, res) => {
         try {
             const { name, image, _id } = req.user
             res.render("dashboard", { n: name, i: image })
@@ -194,7 +194,7 @@ class FrontController {
     static profile = async (req, res) => {
         try {
             const { name, image, _id, email } = req.user
-            res.render('profile', { n: name, i: image, e: email ,message: req.flash('error'),message2: req.flash('success') })
+            res.render('profile', { n: name, i: image, e: email, message: req.flash('error'), message2: req.flash('success') })
 
         } catch (error) {
             console.log(error)
@@ -258,11 +258,11 @@ class FrontController {
                 const user = await UserModal.findById(req.user.id);
                 const image_id = user.image.public_id;
                 await cloudinary.uploader.destroy(image_id);
-    
+
                 const file = req.files.image;
                 const myimage = await cloudinary.uploader.upload(file.tempFilePath, {
                     folder: "studentimage",
-    
+
                 });
                 var data = {
                     name: req.body.name,
@@ -276,14 +276,14 @@ class FrontController {
                 var data = {
                     name: req.body.name,
                     email: req.body.email,
-    
+
                 }
             }
             const updateprofile = await UserModal.findByIdAndUpdate(req.user.id, data)
             res.redirect('/profile')
         } catch (error) {
             console.log(error)
-        }
+        }
     }
 }
 module.exports = FrontController

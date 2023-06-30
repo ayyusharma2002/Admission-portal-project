@@ -5,6 +5,9 @@ const web=require('./routes/web')
 const connectdb=require('./DB/connectdb')
 const fileUpload= require("express-fileupload")
 
+//ejs set (html)
+app.set('view engine', 'ejs')
+
 //temp file uploader
 app.use(fileUpload({useTempFiles: true}));
 
@@ -32,8 +35,7 @@ app.use(flash());
 //for static file
 app.use(express.static('public'))
 
-//ejs set (html)
-app.set('view engine', 'ejs')
+
 
 //router load
 app.use('/',web)
