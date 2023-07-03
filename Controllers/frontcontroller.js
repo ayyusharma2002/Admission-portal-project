@@ -14,7 +14,7 @@ class FrontController {
     static login = async (req, res) => {
         // console.log(req.body)
         try {
-            res.render("registration", { message: req.flash('error') })
+            res.render("login", { message: req.flash('error') })
         } catch (error) {
             console.log(error)
         }
