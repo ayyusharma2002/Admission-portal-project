@@ -3,10 +3,7 @@ const app = express()
 const port = 3000
 const web=require('./routes/web')
 const connectdb=require('./DB/connectdb')
-const fileUpload= require("express-fileupload")
-
-//ejs set (html)
-app.set('view engine', 'ejs')
+const fileUpload= require("express-fileupload");
 
 //temp file uploader
 app.use(fileUpload({useTempFiles: true}));
@@ -35,7 +32,8 @@ app.use(flash());
 //for static file
 app.use(express.static('public'))
 
-
+//ejs set (html)
+app.set('view engine', 'ejs')
 
 //router load
 app.use('/',web)
